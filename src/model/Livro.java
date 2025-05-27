@@ -63,5 +63,10 @@ public class Livro {
     public void setQuantidadeEstoque(int quantidadeEstoque) {
         this.quantidadeEstoque = quantidadeEstoque;
     }
+
+    @Override
+    public String toString(){
+        return idLivro + titulo + " (" + autor + " | " + anoPublicacao + ")";
+    }
 }
 

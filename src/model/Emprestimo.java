@@ -1,29 +1,28 @@
 package model;
 
+import java.time.LocalDate;
+import java.util.Optional;
 
 public class Emprestimo {
 
-    
     private int idEmprestimo;
-    private int idAluno;
-    private int idLivro;
-    private String dataEmprestimo;
-    private String dataDevolucao;
+    private Aluno aluno;
+    private Livro livro;
+    private LocalDate dataEmprestimo;
+    private Optional<LocalDate> dataDevolucao;
 
-    
     public Emprestimo() {
     }
 
-    
-    public Emprestimo(int idEmprestimo, int idAluno, int idLivro, String dataEmprestimo, String dataDevolucao) {
-        this.idEmprestimo = idEmprestimo;
-        this.idAluno = idAluno;
-        this.idLivro = idLivro;
+    public Emprestimo(/*int idEmprestimo,*/ Aluno aluno, Livro livro, LocalDate dataEmprestimo) {
+        //this.idEmprestimo = idEmprestimo;
+        this.aluno = aluno;
+        this.livro = livro;
         this.dataEmprestimo = dataEmprestimo;
-        this.dataDevolucao = dataDevolucao;
+        //this.dataDevolucao = dataDevolucao;
     }
 
-  
+
     public int getIdEmprestimo() {
         return idEmprestimo;
     }
@@ -32,35 +31,35 @@ public class Emprestimo {
         this.idEmprestimo = idEmprestimo;
     }
 
-    public int getIdAluno() {
-        return idAluno;
+    public Aluno getAluno() {
+        return aluno;
     }
 
-    public void setIdAluno(int idAluno) {
-        this.idAluno = idAluno;
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
     }
 
-    public int getIdLivro() {
-        return idLivro;
+    public Livro getLivro() {
+        return livro;
     }
 
-    public void setIdLivro(int idLivro) {
-        this.idLivro = idLivro;
+    public void setLivro(Livro livro) {
+        this.livro = livro;
     }
 
-    public String getDataEmprestimo() {
+    public LocalDate getDataEmprestimo() {
         return dataEmprestimo;
     }
 
-    public void setDataEmprestimo(String dataEmprestimo) {
+    public void setDataEmprestimo(LocalDate dataEmprestimo) {
         this.dataEmprestimo = dataEmprestimo;
     }
 
-    public String getDataDevolucao() {
+    public LocalDate getDataDevolucao() {
         return dataDevolucao;
     }
 
-    public void setDataDevolucao(String dataDevolucao) {
+    public void setDataDevolucao(LocalDate dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
 }

@@ -5,15 +5,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
+
     private static final String URL = "jdbc:mysql://localhost:3306/biblioteca";
     private static final String USUARIO = "root";
-    private static final String SENHA = "sua_senha"; 
+    private static final String SENHA = "sua_senha"; // Substitua pela senha real
 
-    public static Connection conectar() {
+    public static Connection getConnection() {
         try {
             return DriverManager.getConnection(URL, USUARIO, SENHA);
         } catch (SQLException e) {
-            throw new RuntimeException("Erro na conexão com o banco de dados", e);
+            throw new RuntimeException("Erro ao conectar ao banco de dados: " + e.getMessage(), e);
         }
     }
 }
