@@ -127,7 +127,6 @@ public class EmprestimoDAO {
         return lista;
     }
 
-
     public boolean registrarDevolucao(int idEmprestimo) {
         try {
             // Pega o id do livro a partir do empréstimo

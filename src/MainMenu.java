@@ -115,7 +115,6 @@ public class MainMenu {
     }
 
 
-
     private void inserirAluno() {
         var aluno = new Aluno();
         System.out.println("Informe o nome do(a) Aluno(a):");

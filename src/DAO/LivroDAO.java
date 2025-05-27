@@ -79,6 +79,7 @@ public class LivroDAO {
         return livro;
     }
 
+
     public List<Livro> findAll() {
         List<Livro> livros = new ArrayList<>();
         String sql = "SELECT * FROM livros";
