@@ -55,11 +55,13 @@ public class Emprestimo {
         this.dataEmprestimo = dataEmprestimo;
     }
 
-    public LocalDate getDataDevolucao() {
+    public Optional<LocalDate> getDataDevolucao() {
         return dataDevolucao;
     }
 
     public void setDataDevolucao(LocalDate dataDevolucao) {
-        this.dataDevolucao = dataDevolucao;
+        this.dataDevolucao = Optional.ofNullable(dataDevolucao);
     }
+
+
 }

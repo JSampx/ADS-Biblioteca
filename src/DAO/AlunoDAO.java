@@ -14,7 +14,7 @@ public class AlunoDAO {
     }
 
     public void insert(Aluno aluno) {
-        String sql = "INSERT INTO alunos (nome_aluno, matricula, data_nascimento) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO alunos (nome, matricula, data_nascimento) VALUES (?, ?, ?)";
 
         try (PreparedStatement st = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             st.setString(1, aluno.getNomeAluno());
@@ -36,7 +36,7 @@ public class AlunoDAO {
     }
 
     public void update(Aluno aluno) {
-        String sql = "UPDATE alunos SET nome_aluno = ?, matricula = ?, data_nascimento = ? WHERE id = ?";
+        String sql = "UPDATE alunos SET nome = ?, matricula = ?, data_nascimento = ? WHERE id = ?";
 
         try (PreparedStatement st = conn.prepareStatement(sql)) {
             st.setString(1, aluno.getNomeAluno());
@@ -71,7 +71,7 @@ public class AlunoDAO {
                 if (rs.next()) {
                     aluno = new Aluno();
                     aluno.setIdAluno(rs.getInt("id"));
-                    aluno.setNomeAluno(rs.getString("nome_aluno"));
+                    aluno.setNomeAluno(rs.getString("nome"));
                     aluno.setMatricula(rs.getString("matricula"));
                     aluno.setDataNascimento(rs.getDate("data_nascimento").toLocalDate());
                 }
@@ -93,7 +93,7 @@ public class AlunoDAO {
             while (rs.next()) {
                 Aluno aluno = new Aluno();
                 aluno.setIdAluno(rs.getInt("id"));
-                aluno.setNomeAluno(rs.getString("nome_aluno"));
+                aluno.setNomeAluno(rs.getString("nome"));
                 aluno.setMatricula(rs.getString("matricula"));
                 aluno.setDataNascimento(rs.getDate("data_nascimento").toLocalDate());
 
